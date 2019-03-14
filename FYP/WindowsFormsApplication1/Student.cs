@@ -33,9 +33,14 @@ namespace WindowsFormsApplication1
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Data Inserted Successfully");
             }
-            // Student std = new Student();
-            //this.Hide();
-            //    std.Show();
+            AllStudentInfo std = new AllStudentInfo();
+            this.Hide();
+            std.Show();
+        }
+
+        private void Student_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

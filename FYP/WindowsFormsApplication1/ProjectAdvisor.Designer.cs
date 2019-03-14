@@ -37,6 +37,7 @@
             this.com_adv_role = new System.Windows.Forms.ComboBox();
             this.dtp_assign_date = new System.Windows.Forms.DateTimePicker();
             this.lbl_assign_date = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // com_pro_id
@@ -126,11 +127,23 @@
             this.lbl_assign_date.TabIndex = 28;
             this.lbl_assign_date.Text = "Assignment Date";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Brush Script MT", 24F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(168, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(253, 39);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Project Advisor Info";
+            // 
             // ProjectAdvisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 347);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dtp_assign_date);
             this.Controls.Add(this.lbl_assign_date);
             this.Controls.Add(this.com_adv_role);
@@ -158,5 +171,6 @@
         private System.Windows.Forms.ComboBox com_adv_role;
         private System.Windows.Forms.DateTimePicker dtp_assign_date;
         private System.Windows.Forms.Label lbl_assign_date;
+        private System.Windows.Forms.Label label2;
     }
 }

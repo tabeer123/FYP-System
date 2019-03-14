@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Student
+    partial class DeleteAdvisor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,71 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_addstd = new System.Windows.Forms.Button();
-            this.txt_regno = new System.Windows.Forms.TextBox();
-            this.lbl_regno = new System.Windows.Forms.Label();
+            this.lbl_adv_id = new System.Windows.Forms.Label();
+            this.txt_adv_id = new System.Windows.Forms.TextBox();
+            this.btn_add_adv = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btn_addstd
+            // lbl_adv_id
             // 
-            this.btn_addstd.Location = new System.Drawing.Point(163, 198);
-            this.btn_addstd.Name = "btn_addstd";
-            this.btn_addstd.Size = new System.Drawing.Size(109, 23);
-            this.btn_addstd.TabIndex = 0;
-            this.btn_addstd.Text = "Student Added";
-            this.btn_addstd.UseVisualStyleBackColor = true;
-            this.btn_addstd.Click += new System.EventHandler(this.btn_addstd_Click);
+            this.lbl_adv_id.AutoSize = true;
+            this.lbl_adv_id.Location = new System.Drawing.Point(33, 101);
+            this.lbl_adv_id.Name = "lbl_adv_id";
+            this.lbl_adv_id.Size = new System.Drawing.Size(56, 13);
+            this.lbl_adv_id.TabIndex = 28;
+            this.lbl_adv_id.Text = "Advisor ID";
             // 
-            // txt_regno
+            // txt_adv_id
             // 
-            this.txt_regno.Location = new System.Drawing.Point(138, 113);
-            this.txt_regno.Name = "txt_regno";
-            this.txt_regno.Size = new System.Drawing.Size(100, 20);
-            this.txt_regno.TabIndex = 3;
+            this.txt_adv_id.Location = new System.Drawing.Point(142, 101);
+            this.txt_adv_id.Name = "txt_adv_id";
+            this.txt_adv_id.Size = new System.Drawing.Size(100, 20);
+            this.txt_adv_id.TabIndex = 27;
             // 
-            // lbl_regno
+            // btn_add_adv
             // 
-            this.lbl_regno.AutoSize = true;
-            this.lbl_regno.Location = new System.Drawing.Point(12, 116);
-            this.lbl_regno.Name = "lbl_regno";
-            this.lbl_regno.Size = new System.Drawing.Size(103, 13);
-            this.lbl_regno.TabIndex = 4;
-            this.lbl_regno.Text = "Registration Number";
+            this.btn_add_adv.Location = new System.Drawing.Point(155, 206);
+            this.btn_add_adv.Name = "btn_add_adv";
+            this.btn_add_adv.Size = new System.Drawing.Size(109, 23);
+            this.btn_add_adv.TabIndex = 26;
+            this.btn_add_adv.Text = "Delete Advisor ";
+            this.btn_add_adv.UseVisualStyleBackColor = true;
+            this.btn_add_adv.Click += new System.EventHandler(this.btn_add_adv_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Brush Script MT", 24F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 36);
+            this.label2.Location = new System.Drawing.Point(51, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 39);
+            this.label2.Size = new System.Drawing.Size(182, 39);
             this.label2.TabIndex = 36;
-            this.label2.Text = "Insert Student ";
+            this.label2.Text = "Delete Advisor";
             // 
-            // Student
+            // DeleteAdvisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbl_regno);
-            this.Controls.Add(this.txt_regno);
-            this.Controls.Add(this.btn_addstd);
-            this.Name = "Student";
-            this.Text = "Student Added";
-            this.Load += new System.EventHandler(this.Student_Load);
+            this.Controls.Add(this.lbl_adv_id);
+            this.Controls.Add(this.txt_adv_id);
+            this.Controls.Add(this.btn_add_adv);
+            this.Name = "DeleteAdvisor";
+            this.Text = "DeleteAdvisor";
+            this.Load += new System.EventHandler(this.DeleteAdvisor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_addstd;
-        private System.Windows.Forms.TextBox txt_regno;
-        private System.Windows.Forms.Label lbl_regno;
+        private System.Windows.Forms.Label lbl_adv_id;
+        public System.Windows.Forms.TextBox txt_adv_id;
+        private System.Windows.Forms.Button btn_add_adv;
         private System.Windows.Forms.Label label2;
     }
 }

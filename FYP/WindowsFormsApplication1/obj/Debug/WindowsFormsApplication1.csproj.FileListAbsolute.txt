@@ -11,3 +11,29 @@ C:\Users\Ahmed Sohail\documents\visual studio 2015\Projects\WindowsFormsApplicat
 C:\Users\Ahmed Sohail\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Advisor.resources
 C:\Users\Ahmed Sohail\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Project.resources
 C:\Users\Ahmed Sohail\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ProjectAdvisor.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Advisor.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Evaluation.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Group.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Project.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ProjectAdvisor.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Student.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.GroupEvaluation.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AllStudents.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.All_Advisor.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.EditAdvisor.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.DeleteAdvisor.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AllStudentInfo.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.EditStudent.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AllProject.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.EditProject.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AllEvaluations.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.EditEvaluation.resources

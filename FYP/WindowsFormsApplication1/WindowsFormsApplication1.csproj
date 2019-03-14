@@ -52,11 +52,89 @@
     <Compile Include="Advisor.Designer.cs">
       <DependentUpon>Advisor.cs</DependentUpon>
     </Compile>
+    <Compile Include="All Advisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="All Advisor.Designer.cs">
+      <DependentUpon>All Advisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllEvaluations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllEvaluations.Designer.cs">
+      <DependentUpon>AllEvaluations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllStudentInfo.Designer.cs">
+      <DependentUpon>AllStudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllStudents.Designer.cs">
+      <DependentUpon>AllStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteAdvisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteAdvisor.Designer.cs">
+      <DependentUpon>DeleteAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditAdvisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAdvisor.Designer.cs">
+      <DependentUpon>EditAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllProject.Designer.cs">
+      <DependentUpon>AllProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEvaluation.Designer.cs">
+      <DependentUpon>EditEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProject.Designer.cs">
+      <DependentUpon>EditProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditStudent.Designer.cs">
+      <DependentUpon>EditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Evaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Evaluation.Designer.cs">
+      <DependentUpon>Evaluation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Group.Designer.cs">
+      <DependentUpon>Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupEvaluation.Designer.cs">
+      <DependentUpon>GroupEvaluation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Project.cs">
@@ -81,8 +159,47 @@
     <EmbeddedResource Include="Advisor.resx">
       <DependentUpon>Advisor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="All Advisor.resx">
+      <DependentUpon>All Advisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllEvaluations.resx">
+      <DependentUpon>AllEvaluations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllStudentInfo.resx">
+      <DependentUpon>AllStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllStudents.resx">
+      <DependentUpon>AllStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAdvisor.resx">
+      <DependentUpon>DeleteAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAdvisor.resx">
+      <DependentUpon>EditAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllProject.resx">
+      <DependentUpon>AllProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEvaluation.resx">
+      <DependentUpon>EditEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProject.resx">
+      <DependentUpon>EditProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditStudent.resx">
+      <DependentUpon>EditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation.resx">
+      <DependentUpon>Evaluation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Group.resx">
+      <DependentUpon>Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupEvaluation.resx">
+      <DependentUpon>GroupEvaluation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Project.resx">
       <DependentUpon>Project.cs</DependentUpon>

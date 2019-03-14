@@ -35,12 +35,13 @@
             this.txt_adv_sal = new System.Windows.Forms.TextBox();
             this.lbl_desig = new System.Windows.Forms.Label();
             this.com_desig = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_adv_id
             // 
             this.lbl_adv_id.AutoSize = true;
-            this.lbl_adv_id.Location = new System.Drawing.Point(12, 30);
+            this.lbl_adv_id.Location = new System.Drawing.Point(19, 43);
             this.lbl_adv_id.Name = "lbl_adv_id";
             this.lbl_adv_id.Size = new System.Drawing.Size(56, 13);
             this.lbl_adv_id.TabIndex = 7;
@@ -48,10 +49,11 @@
             // 
             // txt_adv_id
             // 
-            this.txt_adv_id.Location = new System.Drawing.Point(155, 30);
+            this.txt_adv_id.Location = new System.Drawing.Point(155, 40);
             this.txt_adv_id.Name = "txt_adv_id";
             this.txt_adv_id.Size = new System.Drawing.Size(100, 20);
             this.txt_adv_id.TabIndex = 6;
+            this.txt_adv_id.TextChanged += new System.EventHandler(this.txt_adv_id_TextChanged);
             // 
             // btn_add_adv
             // 
@@ -101,11 +103,23 @@
             this.com_desig.Size = new System.Drawing.Size(100, 21);
             this.com_desig.TabIndex = 18;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Brush Script MT", 24F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(26, -2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(246, 39);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Advisor Information";
+            // 
             // Advisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.com_desig);
             this.Controls.Add(this.lbl_desig);
             this.Controls.Add(this.lbl_sal);
@@ -115,6 +129,7 @@
             this.Controls.Add(this.btn_add_adv);
             this.Name = "Advisor";
             this.Text = "Advisor";
+            this.Load += new System.EventHandler(this.Advisor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +144,6 @@
         private System.Windows.Forms.TextBox txt_adv_sal;
         private System.Windows.Forms.Label lbl_desig;
         private System.Windows.Forms.ComboBox com_desig;
+        private System.Windows.Forms.Label label2;
     }
 }

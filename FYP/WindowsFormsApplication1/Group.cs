@@ -11,39 +11,29 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Advisor : Form
+    public partial class Group : Form
     {
         public string conStr = "Data Source=DESKTOP-DV4QKKA;Initial Catalog=ProjectA;Integrated Security=True";
-        public Advisor()
+
+
+        public Group()
         {
             InitializeComponent();
         }
 
-        private void btn_add_adv_Click(object sender, EventArgs e)
+        private void btn_create_Click(object sender, EventArgs e)
         {
+
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
             if (con.State == ConnectionState.Open)
             {
-                string p = "INSERT INTO Advisor(Id, Designation, Salary)VALUES('" + (txt_adv_id.Text).ToString() + "',(SELECT Id FROM Lookup WHERE Lookup.Value = '" + (com_desig.Text) + "'), '"+(txt_adv_sal.Text).ToString() +"');";
-
-
-                SqlCommand cmd = new SqlCommand(p, con);
+                string q = "INSERT INTO [Group](Created_On)VALUES('"+ Convert.ToDateTime(dtp_create.Value) + "');";
+                SqlCommand cmd = new SqlCommand(q, con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Data Inserted Successfully");
+
             }
-            // Student std = new Student();
-            //this.Hide();
-            //    std.Show();
-        }
-
-        private void Advisor_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_adv_id_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }

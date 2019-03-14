@@ -42,6 +42,7 @@
             this.dtp_dob = new System.Windows.Forms.DateTimePicker();
             this.com_gender = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_addstd
@@ -164,14 +165,26 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 18;
-            this.button1.Text = "Add Adviser";
+            this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Brush Script MT", 24F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(230, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(236, 39);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Person Information";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 356);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.com_gender);
             this.Controls.Add(this.dtp_dob);
@@ -188,6 +201,7 @@
             this.Controls.Add(this.btn_addstd);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,6 +223,7 @@
         private System.Windows.Forms.DateTimePicker dtp_dob;
         private System.Windows.Forms.ComboBox com_gender;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
