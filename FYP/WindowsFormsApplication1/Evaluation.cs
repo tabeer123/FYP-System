@@ -91,5 +91,12 @@ namespace WindowsFormsApplication1
             }
             return t;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Home std = new Home();
+            this.Hide();
+            std.Show();
+        }
     }
 }

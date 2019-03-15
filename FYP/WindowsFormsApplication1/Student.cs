@@ -42,5 +42,12 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home std = new Home();
+            this.Hide();
+            std.Show();
+        }
     }
 }

@@ -41,7 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -165,7 +164,6 @@
             this.tableLayoutPanel1.Controls.Add(this.txt_totwet, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.txt_mark, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.txt_name, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(-86, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -177,16 +175,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.77609F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(790, 443);
             this.tableLayoutPanel1.TabIndex = 40;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Garamond", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 369);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 32);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Home";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // EditEvaluation
             // 
@@ -218,6 +206,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
     }
 }

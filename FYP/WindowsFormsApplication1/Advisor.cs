@@ -43,10 +43,11 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("Data Inserted Successfully");
                         }
 
+
+                        All_Advisor std = new All_Advisor();
+                        this.Hide();
+                        std.Show();
                     }
-                    // Student std = new Student();
-                    //this.Hide();
-                    //    std.Show();
 
                     catch (Exception ex)
                     {
@@ -96,7 +97,7 @@ namespace WindowsFormsApplication1
             else if (string.IsNullOrEmpty(txt_adv_sal.Text))
             {
                 
-                errorProvider1.SetError(txt_adv_id, MessageBox.Show("Please Enter Salary", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                errorProvider1.SetError(txt_adv_sal, MessageBox.Show("Please Enter Salary", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
                 txt_adv_sal.Focus();
                 t = 1;
 
@@ -118,6 +119,14 @@ namespace WindowsFormsApplication1
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+             Home std = new Home();
+            this.Hide();
+           std.Show();
 
         }
 

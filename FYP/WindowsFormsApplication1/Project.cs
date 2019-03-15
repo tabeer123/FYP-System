@@ -34,9 +34,10 @@ namespace WindowsFormsApplication1
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Data Inserted Successfully");
                     }
-                    // Student std = new Student();
-                    //this.Hide();
-                    //    std.Show();
+                    All_Advisor std = new All_Advisor();
+
+                    this.Hide();
+                    std.Show();
                 } catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
@@ -82,5 +83,11 @@ namespace WindowsFormsApplication1
             return t;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home std = new Home();
+            this.Hide();
+            std.Show();
+        }
     }
 }

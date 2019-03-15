@@ -40,6 +40,7 @@
             this.lbl_sal = new System.Windows.Forms.Label();
             this.lbl_desig = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -109,12 +110,13 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Garamond", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 360);
+            this.button1.Location = new System.Drawing.Point(275, 360);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 32);
             this.button1.TabIndex = 18;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txt_adv_sal
             // 
@@ -152,6 +154,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.59686F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.35079F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.48868F));
+            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.lbl_sal, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txt_adv_sal, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 5);
@@ -174,6 +177,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(955, 433);
             this.tableLayoutPanel1.TabIndex = 38;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Garamond", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(3, 360);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 42);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "Advisor Added";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Advisor
             // 
@@ -205,5 +218,6 @@
         private System.Windows.Forms.Button btn_add_adv;
         private System.Windows.Forms.Label lbl_adv_id;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
     }
 }

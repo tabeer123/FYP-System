@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
                 if (e.ColumnIndex == 0)
                 {
                     EditStudent edit = new EditStudent();
-                    edit.txt_lname.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    edit.txt_id.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
                     edit.txtfname.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
                     edit.txt_lname.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
@@ -90,6 +90,13 @@ namespace WindowsFormsApplication1
                
             }
            
+        }
+
+        private void btn_add_adv_Click(object sender, EventArgs e)
+        {
+            Form1 std = new Form1();
+            this.Hide();
+            std.Show();
         }
     }
 }
