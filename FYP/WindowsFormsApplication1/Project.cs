@@ -34,7 +34,7 @@ namespace WindowsFormsApplication1
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Data Inserted Successfully");
                     }
-                    All_Advisor std = new All_Advisor();
+                    AllProject std = new AllProject();
 
                     this.Hide();
                     std.Show();
