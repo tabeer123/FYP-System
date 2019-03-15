@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_pro_descrip = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
             this.txt_pro_title = new System.Windows.Forms.TextBox();
@@ -36,6 +37,8 @@
             this.btn_add_pro = new System.Windows.Forms.Button();
             this.txt_descrip = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_pro_descrip
@@ -107,11 +110,15 @@
             this.label2.TabIndex = 36;
             this.label2.Text = " Project ";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(701, 460);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_descrip);
             this.Controls.Add(this.lbl_pro_descrip);
@@ -123,6 +130,7 @@
             this.Name = "Project";
             this.Text = "Project";
             this.Load += new System.EventHandler(this.Project_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +145,6 @@
         private System.Windows.Forms.Button btn_add_pro;
         private System.Windows.Forms.TextBox txt_descrip;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -73,5 +73,18 @@ namespace WindowsFormsApplication1
             }
             
         }
+
+        private void btn_add_adv_Click(object sender, EventArgs e)
+        {
+            Project std = new Project();
+            this.Hide();
+            std.Show();
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

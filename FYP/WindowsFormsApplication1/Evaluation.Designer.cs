@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_totmar = new System.Windows.Forms.Label();
             this.lbl_totwei = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.txt_name = new System.Windows.Forms.TextBox();
             this.btn_evaluate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_name
@@ -107,11 +110,15 @@
             this.label2.TabIndex = 36;
             this.label2.Text = "Evaluation";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Evaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 331);
+            this.ClientSize = new System.Drawing.Size(701, 460);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_evaluate);
             this.Controls.Add(this.txt_name);
@@ -122,6 +129,8 @@
             this.Controls.Add(this.lbl_name);
             this.Name = "Evaluation";
             this.Text = "Evaluation";
+            this.Load += new System.EventHandler(this.Evaluation_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +145,6 @@
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Button btn_evaluate;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

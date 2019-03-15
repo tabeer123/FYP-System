@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.com_gender = new System.Windows.Forms.ComboBox();
             this.dtp_dob = new System.Windows.Forms.DateTimePicker();
             this.txt_email = new System.Windows.Forms.TextBox();
@@ -44,6 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // com_gender
@@ -184,11 +187,15 @@
             this.label2.Text = "Edit Student Data";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 451);
+            this.ClientSize = new System.Drawing.Size(701, 460);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_id);
@@ -208,6 +215,7 @@
             this.Name = "EditStudent";
             this.Text = "EditStudent";
             this.Load += new System.EventHandler(this.EditStudent_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +238,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

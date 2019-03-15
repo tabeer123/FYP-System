@@ -22,6 +22,12 @@ namespace WindowsFormsApplication1
 
         private void btn_evaluate_Click(object sender, EventArgs e)
         {
+            if (val() == 0)
+            {
+                try
+                {
+
+              
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
             if (con.State == ConnectionState.Open)
@@ -36,11 +42,54 @@ namespace WindowsFormsApplication1
             this.Hide();
             std.Show();
 
+        }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                  }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Evaluation_Load(object sender, EventArgs e)
+        {
+
+        }
+        private int val()
+        {
+            int t = 0;
+            if (string.IsNullOrEmpty(txt_name.Text))
+            {
+
+
+                errorProvider1.SetError(txt_name, MessageBox.Show("Please Enter Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_name.Focus();
+                t = 1;
+
+
+            }
+            else if (string.IsNullOrEmpty(txt_mark.Text))
+            {
+
+                errorProvider1.SetError(txt_mark, MessageBox.Show("Please Select  Total Marks", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_mark.Focus();
+                t = 1;
+
+
+            }
+            else if (string.IsNullOrEmpty(txt_totwet.Text))
+            {
+
+                errorProvider1.SetError(txt_totwet, MessageBox.Show("Please Enter Total Weightage", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_totwet.Focus();
+                t = 1;
+
+
+            }
+            return t;
         }
     }
 }

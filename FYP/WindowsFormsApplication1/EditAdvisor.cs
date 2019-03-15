@@ -39,26 +39,31 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                int key = Convert.ToInt32(txt_adv_id.Text);
-                SqlConnection con = new SqlConnection(conStr);
-                con.Open();
-                if (con.State == ConnectionState.Open)
+                if (val() == 0)
                 {
-                    string p = "UPDATE Advisor SET Designation= (SELECT Id FROM Lookup WHERE Lookup.Value = '" + (com_desig.Text) + "'), Salary =('" + Convert.ToDecimal(txt_adv_sal.Text) + "')WHERE Id ='" + Convert.ToInt32(txt_adv_id.Text) + "';";
 
 
-                    SqlCommand cmd = new SqlCommand(p, con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Congrats! Data Update Successfully");
-                   
-                    con.Close();
+                    int key = Convert.ToInt32(txt_adv_id.Text);
+                    SqlConnection con = new SqlConnection(conStr);
+                    con.Open();
+                    if (con.State == ConnectionState.Open)
+                    {
+                        string p = "UPDATE Advisor SET Designation= (SELECT Id FROM Lookup WHERE Lookup.Value = '" + (com_desig.Text) + "'), Salary =('" + Convert.ToDecimal(txt_adv_sal.Text) + "')WHERE Id ='" + Convert.ToInt32(txt_adv_id.Text) + "';";
+
+
+                        SqlCommand cmd = new SqlCommand(p, con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Congrats! Data Update Successfully");
+
+                        con.Close();
+                    }
+                    // Student std = new Student();
+                    //this.Hide();
+                    //    std.Show();
+
+
+
                 }
-                // Student std = new Student();
-                //this.Hide();
-                //    std.Show();
-
-
-
             }
             catch (Exception ex)
             {
@@ -66,5 +71,39 @@ namespace WindowsFormsApplication1
             }
 
         }
+        private int val()
+        {
+            int t = 0;
+            if (string.IsNullOrEmpty(txt_adv_id.Text))
+            {
+
+
+                errorProvider1.SetError(txt_adv_id, MessageBox.Show("Please Enter Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_adv_id.Focus();
+                t = 1;
+
+
+            }
+            else if (string.IsNullOrEmpty(com_desig.Text))
+            {
+
+                errorProvider1.SetError(com_desig, MessageBox.Show("Please Select  Designation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                com_desig.Focus();
+                t = 1;
+
+
+            }
+            else if (string.IsNullOrEmpty(txt_adv_sal.Text))
+            {
+
+                errorProvider1.SetError(txt_adv_id, MessageBox.Show("Please Enter Salary", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_adv_sal.Focus();
+                t = 1;
+
+
+            }
+            return t;
+        }
+
     }
 }

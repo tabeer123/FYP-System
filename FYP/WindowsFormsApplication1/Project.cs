@@ -21,25 +21,66 @@ namespace WindowsFormsApplication1
 
         private void btn_add_pro_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (con.State == ConnectionState.Open)
-            {
-                string p = "INSERT INTO Project( Description, Title)VALUES( '" + (txt_descrip.Text).ToString() + "', '" + (txt_pro_title.Text).ToString() + "');";
+            if (val()==0) {
+                try {
+                    SqlConnection con = new SqlConnection(conStr);
+                    con.Open();
+                    if (con.State == ConnectionState.Open)
+                    {
+                        string p = "INSERT INTO Project( Description, Title)VALUES( '" + (txt_descrip.Text).ToString() + "', '" + (txt_pro_title.Text).ToString() + "');";
 
 
-                SqlCommand cmd = new SqlCommand(p, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Data Inserted Successfully");
+                        SqlCommand cmd = new SqlCommand(p, con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data Inserted Successfully");
+                    }
+                    // Student std = new Student();
+                    //this.Hide();
+                    //    std.Show();
+                } catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            // Student std = new Student();
-            //this.Hide();
-            //    std.Show();
         }
 
         private void Project_Load(object sender, EventArgs e)
         {
 
         }
+        private int val()
+        {
+            int t = 0;
+            if (string.IsNullOrEmpty(txt_pro_title.Text))
+            {
+
+
+                errorProvider1.SetError(txt_pro_title, MessageBox.Show("Please Enter Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_pro_title.Focus();
+                t = 1;
+
+
+            }
+            else if (string.IsNullOrEmpty(txt_descrip.Text))
+            {
+
+                errorProvider1.SetError(txt_descrip, MessageBox.Show("Please Select  Total Marks", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_descrip.Focus();
+                t = 1;
+
+
+            }
+            else if (string.IsNullOrEmpty(txt_pro_id.Text))
+            {
+
+                errorProvider1.SetError(txt_pro_id, MessageBox.Show("Please Enter Total Weightage", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_pro_id.Focus();
+                t = 1;
+
+
+            }
+            return t;
+        }
+
     }
 }

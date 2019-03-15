@@ -37,24 +37,27 @@
             // lbl_adv_id
             // 
             this.lbl_adv_id.AutoSize = true;
+            this.lbl_adv_id.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_adv_id.Location = new System.Drawing.Point(33, 101);
             this.lbl_adv_id.Name = "lbl_adv_id";
-            this.lbl_adv_id.Size = new System.Drawing.Size(56, 13);
+            this.lbl_adv_id.Size = new System.Drawing.Size(108, 24);
             this.lbl_adv_id.TabIndex = 28;
             this.lbl_adv_id.Text = "Advisor ID";
             // 
             // txt_adv_id
             // 
+            this.txt_adv_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_adv_id.Location = new System.Drawing.Point(142, 101);
             this.txt_adv_id.Name = "txt_adv_id";
-            this.txt_adv_id.Size = new System.Drawing.Size(100, 20);
+            this.txt_adv_id.Size = new System.Drawing.Size(142, 31);
             this.txt_adv_id.TabIndex = 27;
             // 
             // btn_add_adv
             // 
+            this.btn_add_adv.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add_adv.Location = new System.Drawing.Point(155, 206);
             this.btn_add_adv.Name = "btn_add_adv";
-            this.btn_add_adv.Size = new System.Drawing.Size(109, 23);
+            this.btn_add_adv.Size = new System.Drawing.Size(164, 23);
             this.btn_add_adv.TabIndex = 26;
             this.btn_add_adv.Text = "Delete Advisor ";
             this.btn_add_adv.UseVisualStyleBackColor = true;
@@ -75,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(701, 460);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_adv_id);
             this.Controls.Add(this.txt_adv_id);

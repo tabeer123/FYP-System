@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_evaluate = new System.Windows.Forms.Button();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.txt_mark = new System.Windows.Forms.TextBox();
@@ -38,6 +39,8 @@
             this.lbl_eval_id = new System.Windows.Forms.Label();
             this.txt_eval_id = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_evaluate
@@ -125,11 +128,15 @@
             this.label2.TabIndex = 36;
             this.label2.Text = "Edit Evaluation";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // EditEvaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 309);
+            this.ClientSize = new System.Drawing.Size(701, 460);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_eval_id);
             this.Controls.Add(this.txt_eval_id);
@@ -142,6 +149,8 @@
             this.Controls.Add(this.lbl_name);
             this.Name = "EditEvaluation";
             this.Text = "EditEvaluation";
+            this.Load += new System.EventHandler(this.EditEvaluation_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +168,6 @@
         private System.Windows.Forms.Label lbl_eval_id;
         public System.Windows.Forms.TextBox txt_eval_id;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

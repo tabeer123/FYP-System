@@ -81,5 +81,12 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void btn_add_adv_Click(object sender, EventArgs e)
+        {
+           Evaluation std = new Evaluation();
+            this.Hide();
+            std.Show();
+        }
     }
 }

@@ -67,5 +67,13 @@ namespace WindowsFormsApplication1
             }
 
         }
+
+        private void btn_add_adv_Click(object sender, EventArgs e)
+        {
+            Advisor std = new Advisor();
+            this.Hide();
+            std.Show();
+
+        }
     }
 }

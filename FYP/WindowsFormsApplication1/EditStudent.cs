@@ -35,38 +35,76 @@ namespace WindowsFormsApplication1
 
         private void btn_editstd_Click(object sender, EventArgs e)
         {
-            try
+            if (val() == 0)
             {
-               int key = Convert.ToInt32(txt_id.Text);
-                SqlConnection con = new SqlConnection(conStr);
-                con.Open();
-                if (con.State == ConnectionState.Open)
+                try
                 {
-                    string p = "UPDATE Person SET FirstName=('"+ txtfname.Text.ToString() + "'), LastName=('" + txt_lname.Text.ToString() + "'),Contact =('"+txt_contact.Text.ToString()+ "'),Email =('" + txt_email.Text.ToString() + "'),DateOfBirth=('" + Convert.ToDateTime(dtp_dob.Value) + "'), Gender= (SELECT Id FROM Lookup WHERE Lookup.Value = '" + (com_gender.Text) + "')WHERE Id = '"+Convert.ToInt32(txt_id.Text)  +"';";
+                    int key = Convert.ToInt32(txt_id.Text);
+                    SqlConnection con = new SqlConnection(conStr);
+                    con.Open();
+                    if (con.State == ConnectionState.Open)
+                    {
+                        string p = "UPDATE Person SET FirstName=('" + txtfname.Text.ToString() + "'), LastName=('" + txt_lname.Text.ToString() + "'),Contact =('" + txt_contact.Text.ToString() + "'),Email =('" + txt_email.Text.ToString() + "'),DateOfBirth=('" + Convert.ToDateTime(dtp_dob.Value) + "'), Gender= (SELECT Id FROM Lookup WHERE Lookup.Value = '" + (com_gender.Text) + "')WHERE Id = '" + Convert.ToInt32(txt_id.Text) + "';";
 
 
-                    SqlCommand cmd = new SqlCommand(p, con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Congrats! Data Update Successfully");
+                        SqlCommand cmd = new SqlCommand(p, con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Congrats! Data Update Successfully");
 
-                    con.Close();
+                        con.Close();
+                    }
+
+
+
                 }
-                // Student std = new Student();
-                //this.Hide();
-                //    std.Show();
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
+
 
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+        private int val()
+        {
+            int flag = 0;
+            if (string.IsNullOrEmpty(txtfname.Text))
+            {
+
+                errorProvider1.SetError(txtfname, MessageBox.Show("Please Enter Your First Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txtfname.Focus();
+                flag = 1;
+            }
+            else if (string.IsNullOrWhiteSpace(txt_lname.Text))
+            {
+
+                errorProvider1.SetError(txt_lname, MessageBox.Show("Please Enter Your Last Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_lname.Focus();
+                flag = 1;
+
+            }
+            else if (string.IsNullOrWhiteSpace(txt_email.Text))
+            {
+
+
+
+                errorProvider1.SetError(txt_email, MessageBox.Show("Please Enter Your Email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_email.Focus();
+                flag = 1;
+            }
+            else if (string.IsNullOrWhiteSpace(txt_contact.Text))
+            {
+
+                errorProvider1.SetError(txt_contact, MessageBox.Show("Please Enter Your Contact ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_lname.Focus();
+                flag = 1;
+
+            }
+            return flag;
         }
     }
 }
