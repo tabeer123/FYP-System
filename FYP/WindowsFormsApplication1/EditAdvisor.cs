@@ -105,5 +105,9 @@ namespace WindowsFormsApplication1
             return t;
         }
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

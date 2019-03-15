@@ -46,36 +46,43 @@
             // 
             // com_desig
             // 
+            this.com_desig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.com_desig.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.com_desig.FormattingEnabled = true;
             this.com_desig.Items.AddRange(new object[] {
             "Professor",
             "Associate Professor",
             "Lecturer",
             "Industry Professional"});
-            this.com_desig.Location = new System.Drawing.Point(493, 163);
+            this.com_desig.Location = new System.Drawing.Point(493, 158);
             this.com_desig.Name = "com_desig";
-            this.com_desig.Size = new System.Drawing.Size(100, 21);
+            this.com_desig.Size = new System.Drawing.Size(212, 32);
             this.com_desig.TabIndex = 25;
             // 
             // txt_adv_sal
             // 
-            this.txt_adv_sal.Location = new System.Drawing.Point(493, 235);
+            this.txt_adv_sal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_adv_sal.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_adv_sal.Location = new System.Drawing.Point(493, 228);
             this.txt_adv_sal.Name = "txt_adv_sal";
-            this.txt_adv_sal.Size = new System.Drawing.Size(100, 20);
+            this.txt_adv_sal.Size = new System.Drawing.Size(212, 31);
             this.txt_adv_sal.TabIndex = 22;
             // 
             // txt_adv_id
             // 
-            this.txt_adv_id.Location = new System.Drawing.Point(493, 90);
+            this.txt_adv_id.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_adv_id.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_adv_id.Location = new System.Drawing.Point(493, 87);
             this.txt_adv_id.Name = "txt_adv_id";
-            this.txt_adv_id.Size = new System.Drawing.Size(100, 20);
+            this.txt_adv_id.Size = new System.Drawing.Size(212, 31);
             this.txt_adv_id.TabIndex = 20;
             // 
             // btn_add_adv
             // 
-            this.btn_add_adv.Location = new System.Drawing.Point(711, 374);
+            this.btn_add_adv.Font = new System.Drawing.Font("Garamond", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_adv.Location = new System.Drawing.Point(711, 362);
             this.btn_add_adv.Name = "btn_add_adv";
-            this.btn_add_adv.Size = new System.Drawing.Size(109, 23);
+            this.btn_add_adv.Size = new System.Drawing.Size(134, 42);
             this.btn_add_adv.TabIndex = 19;
             this.btn_add_adv.Text = "Advisor Added";
             this.btn_add_adv.UseVisualStyleBackColor = true;
@@ -112,7 +119,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btn_add_adv, 3, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-127, -2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(-127, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.50197F));
@@ -121,14 +128,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.44591F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.77274F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.77609F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(873, 449);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(873, 435);
             this.tableLayoutPanel1.TabIndex = 39;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(278, 232);
+            this.label1.Location = new System.Drawing.Point(278, 225);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 9;
@@ -137,7 +145,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Garamond", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 374);
+            this.button1.Location = new System.Drawing.Point(3, 362);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 32);
             this.button1.TabIndex = 18;
@@ -148,7 +156,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(278, 160);
+            this.label3.Location = new System.Drawing.Point(278, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 24);
             this.label3.TabIndex = 11;
@@ -158,7 +166,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(278, 87);
+            this.label4.Location = new System.Drawing.Point(278, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 24);
             this.label4.TabIndex = 7;

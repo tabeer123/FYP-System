@@ -202,7 +202,7 @@
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(238, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(290, 88);
+            this.label2.Size = new System.Drawing.Size(290, 61);
             this.label2.TabIndex = 36;
             this.label2.Text = "Person Information";
             // 
@@ -252,11 +252,11 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.70588F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.97549F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, -3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 24);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(816, 88);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(816, 61);
             this.tableLayoutPanel2.TabIndex = 38;
             // 
             // Form1
