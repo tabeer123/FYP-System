@@ -23,20 +23,33 @@ namespace WindowsFormsApplication1
 
         private void btn_create_Click(object sender, EventArgs e)
         {
-
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (con.State == ConnectionState.Open)
+            try
             {
-                string q = "INSERT INTO [Group](Created_On)VALUES('"+ Convert.ToDateTime(dtp_create.Value) + "');";
-                SqlCommand cmd = new SqlCommand(q, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Data Inserted Successfully");
+
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (con.State == ConnectionState.Open)
+                {
+
+
+                    string q = "INSERT INTO [Group](Created_On)VALUES('" + Convert.ToDateTime(dtp_create.Value) + "');";
+                    SqlCommand cmd = new SqlCommand(q, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data Inserted Successfully");
+                }
+                AllStudents std = new AllStudents();
+                this.Hide();
+                std.Show();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             }
 
-        }
-
+       
         private void button2_Click(object sender, EventArgs e)
         {
             Home std = new Home();
@@ -44,4 +57,7 @@ namespace WindowsFormsApplication1
             std.Show();
         }
     }
-}
+
+       
+    }
+

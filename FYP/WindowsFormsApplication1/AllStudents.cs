@@ -22,51 +22,75 @@ namespace WindowsFormsApplication1
 
         private void AllStudents_Load(object sender, EventArgs e)
         {
-
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            DataGridViewCheckBoxColumn hello = new DataGridViewCheckBoxColumn();
-            hello.HeaderText = "Select Students";
-            hello.Name = "Select Students";
-            if (con.State == ConnectionState.Open)
+            try
             {
-                
-                SqlDataAdapter sqlda = new SqlDataAdapter("select * from Student", con);
-                DataTable datatab = new DataTable();
-                sqlda.Fill(datatab);
-                dataGridView1.DataSource = datatab;
-                dataGridView1.Columns.Add(hello);
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                DataGridViewCheckBoxColumn hello = new DataGridViewCheckBoxColumn();
+                hello.HeaderText = "Select Students";
+                hello.Name = "Select Students";
+                if (con.State == ConnectionState.Open)
+                {
 
-                ////string q = "INSERT INTO GroupEvaluation(GroupId, EvaluationId, ObtainedMarks, EvaluationDate )VALUES('" + com_adv_id.Text + "','" + com_pro_id.Text + "', (SELECT Id FROM Lookup WHERE Lookup.Value = '" + (com_adv_role.Text) + "') ,'" + Convert.ToDateTime(dtp_assign_date.Value) + "');";
-                //SqlCommand cmd = new SqlCommand(q, con);
-                //cmd.ExecuteNonQuery();
-                //MessageBox.Show("Data Inserted Successfully");
+                    SqlDataAdapter sqlda = new SqlDataAdapter("select * from Student", con);
+                    DataTable datatab = new DataTable();
+                    sqlda.Fill(datatab);
+                    dataGridView1.DataSource = datatab;
+                    dataGridView1.Columns.Add(hello);
 
+                  
+                }
+               
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (con.State == ConnectionState.Open)
+            try
             {
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (con.State == ConnectionState.Open)
                 {
-
-                    if ((dataGridView1.Rows[i].Cells[2].Value) != null)
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
-                        if ((Boolean)dataGridView1.Rows[i].Cells[2].Value == true)
+
+                        if ((dataGridView1.Rows[i].Cells[2].Value) != null)
                         {
-                            String query = "INSERT INTO GroupStudent (GroupId,StudentId,Status,AssignmentDate)VALUES((select MAX(Id) FROM [Group]),('" + dataGridView1.Rows[i].Cells[0].Value + "'),(Select Id from Lookup Where Lookup.Value = '" + comboBox1.Text + "'),('" + Convert.ToDateTime(dateTimePicker1.Text) + "'));";
-                            SqlCommand cmd = new SqlCommand(query, con);
-                            cmd.ExecuteNonQuery();
+                            if ((Boolean)dataGridView1.Rows[i].Cells[2].Value == true)
+                            {
+                                String query = "INSERT INTO GroupStudent (GroupId,StudentId,Status,AssignmentDate)VALUES((select MAX(Id) FROM [Group]),('" + dataGridView1.Rows[i].Cells[0].Value + "'),(Select Id from Lookup Where Lookup.Value = '" + com_sta.Text + "'),('" + Convert.ToDateTime(dtp_assign.Text) + "'));";
+                                SqlCommand cmd = new SqlCommand(query, con);
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("Congrats! Data Recorded");
+                            }
+
+
                         }
-
-
                     }
                 }
+                GroupStudent std = new GroupStudent();
+                this.Hide();
+                std.Show();
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

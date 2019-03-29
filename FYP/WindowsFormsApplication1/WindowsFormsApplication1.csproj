@@ -100,6 +100,18 @@
     <Compile Include="EditEvaluation.Designer.cs">
       <DependentUpon>EditEvaluation.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditGroup.Designer.cs">
+      <DependentUpon>EditGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditGroupStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditGroupStudent.Designer.cs">
+      <DependentUpon>EditGroupStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,12 @@
     </Compile>
     <Compile Include="GroupEvaluation.Designer.cs">
       <DependentUpon>GroupEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupStudent.Designer.cs">
+      <DependentUpon>GroupStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -189,6 +207,12 @@
     <EmbeddedResource Include="EditEvaluation.resx">
       <DependentUpon>EditEvaluation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditGroup.resx">
+      <DependentUpon>EditGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditGroupStudent.resx">
+      <DependentUpon>EditGroupStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditProject.resx">
       <DependentUpon>EditProject.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GroupEvaluation.resx">
       <DependentUpon>GroupEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupStudent.resx">
+      <DependentUpon>GroupStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

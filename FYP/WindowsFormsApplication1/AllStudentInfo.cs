@@ -45,9 +45,13 @@ namespace WindowsFormsApplication1
                 else if (e.ColumnIndex == 1)
                 {
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                    string t = "DELETE FROM GroupStudent where StudentId = '" + row.Cells[2].Value + "';";
+
                     string q = "DELETE FROM Student where Id = '" + row.Cells[2].Value + "';";
                     string p = "DELETE FROM Person where Id = '" + row.Cells[2].Value + "';";
                     // string t = "DELETE FROM  where Id = '" + row.Cells[2].Value + "';";
+                    SqlCommand cmt = new SqlCommand(t, con);
+                    cmt.ExecuteNonQuery();
                     SqlCommand cm = new SqlCommand(q, con);
                     cm.ExecuteNonQuery();
                     SqlCommand cmd = new SqlCommand(p, con);
@@ -97,6 +101,11 @@ namespace WindowsFormsApplication1
             Form1 std = new Form1();
             this.Hide();
             std.Show();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
