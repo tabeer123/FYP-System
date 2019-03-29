@@ -64,6 +64,12 @@
     <Compile Include="AllEvaluations.Designer.cs">
       <DependentUpon>AllEvaluations.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllGroupEvaluations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllGroupEvaluations.Designer.cs">
+      <DependentUpon>AllGroupEvaluations.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllStudentInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllEvaluations.resx">
       <DependentUpon>AllEvaluations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllGroupEvaluations.resx">
+      <DependentUpon>AllGroupEvaluations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllStudentInfo.resx">
       <DependentUpon>AllStudentInfo.cs</DependentUpon>

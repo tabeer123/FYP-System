@@ -38,9 +38,9 @@
             this.lbl_assign = new System.Windows.Forms.Label();
             this.com_sta = new System.Windows.Forms.ComboBox();
             this.lbl_status = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.txt_groupid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -165,10 +165,6 @@
             this.lbl_status.TabIndex = 22;
             this.lbl_status.Text = "Status";
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // txt_groupid
             // 
             this.txt_groupid.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,6 +182,10 @@
             this.label1.Size = new System.Drawing.Size(90, 24);
             this.label1.TabIndex = 35;
             this.label1.Text = "Group id";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // EditGroup
             // 

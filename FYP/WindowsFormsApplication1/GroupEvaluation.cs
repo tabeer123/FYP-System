@@ -33,6 +33,9 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Data Inserted Successfully");
 
             }
+            AllGroupEvaluations std = new AllGroupEvaluations();
+            this.Hide();
+            std.Show();
         }
 
         private void GroupEvaluation_Load(object sender, EventArgs e)

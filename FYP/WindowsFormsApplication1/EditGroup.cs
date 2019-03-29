@@ -44,13 +44,13 @@ namespace WindowsFormsApplication1
                 {
                     GroupStudent std = new GroupStudent();
 
-                    //int key = Convert.ToInt32(std.dataGridView1.CurrentRow.Cells[2].Value);
+                   int key = Convert.ToInt32(std.dataGridView1.CurrentRow.Cells[2].Value);
                     SqlConnection con = new SqlConnection(conStr);
                     con.Open();
                     if (con.State == ConnectionState.Open)
                     {
                      
-                       string p = "UPDATE GroupStudent SET Status= (SELECT Id FROM Lookup WHERE Lookup.Value = '" + (com_sta.Text) + "'),AssignmentDate =('" + Convert.ToDateTime(dtp_assign.Value) + "')WHERE Id ='" + Convert.ToInt32(std.dataGridView1.CurrentRow.Cells[2].Value) + "';";
+                       string p = "UPDATE GroupStudent SET Status= (SELECT Id FROM Lookup WHERE Lookup.Value = '" + (com_sta.Text) + "'),AssignmentDate =('" + Convert.ToDateTime(dtp_assign.Value) + "')WHERE GroupId ='" + Convert.ToInt32(std.dataGridView1.CurrentRow.Cells[2].Value) + "';";
 
                        SqlCommand cmd = new SqlCommand(p, con);
                         cmd.ExecuteNonQuery();

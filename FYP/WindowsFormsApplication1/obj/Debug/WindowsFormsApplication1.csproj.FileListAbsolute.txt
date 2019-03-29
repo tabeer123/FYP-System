@@ -41,3 +41,4 @@ C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\
 C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.GroupStudent.resources
 C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.EditGroupEvaluation.resources
 C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.EditGroup.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AllGroupEvaluations.resources
