@@ -36,12 +36,12 @@
             this.lbl_evaldate = new System.Windows.Forms.Label();
             this.dtp_evaluation_date = new System.Windows.Forms.DateTimePicker();
             this.btn_evaluate = new System.Windows.Forms.Button();
-            this.com_gro_id = new System.Windows.Forms.ComboBox();
             this.txt_obtainmark = new System.Windows.Forms.TextBox();
             this.lbl_groid = new System.Windows.Forms.Label();
             this.lbl_obtmark = new System.Windows.Forms.Label();
             this.lbl_evalid = new System.Windows.Forms.Label();
             this.txt_evalid = new System.Windows.Forms.TextBox();
+            this.txt_grpid = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -86,12 +86,12 @@
             this.tableLayoutPanel1.Controls.Add(this.lbl_evaldate, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.dtp_evaluation_date, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.btn_evaluate, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.com_gro_id, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txt_obtainmark, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.lbl_groid, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_obtmark, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lbl_evalid, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txt_evalid, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txt_grpid, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 109);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -146,16 +146,6 @@
             this.btn_evaluate.UseVisualStyleBackColor = true;
             this.btn_evaluate.Click += new System.EventHandler(this.btn_evaluate_Click);
             // 
-            // com_gro_id
-            // 
-            this.com_gro_id.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.com_gro_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.com_gro_id.FormattingEnabled = true;
-            this.com_gro_id.Location = new System.Drawing.Point(446, 3);
-            this.com_gro_id.Name = "com_gro_id";
-            this.com_gro_id.Size = new System.Drawing.Size(212, 33);
-            this.com_gro_id.TabIndex = 32;
-            // 
             // txt_obtainmark
             // 
             this.txt_obtainmark.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -204,6 +194,15 @@
             this.txt_evalid.Size = new System.Drawing.Size(212, 31);
             this.txt_evalid.TabIndex = 33;
             // 
+            // txt_grpid
+            // 
+            this.txt_grpid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_grpid.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_grpid.Location = new System.Drawing.Point(446, 3);
+            this.txt_grpid.Name = "txt_grpid";
+            this.txt_grpid.Size = new System.Drawing.Size(212, 31);
+            this.txt_grpid.TabIndex = 34;
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -238,9 +237,9 @@
         private System.Windows.Forms.Label lbl_obtmark;
         private System.Windows.Forms.Label lbl_evalid;
         public System.Windows.Forms.DateTimePicker dtp_evaluation_date;
-        public System.Windows.Forms.ComboBox com_gro_id;
         public System.Windows.Forms.TextBox txt_obtainmark;
         public System.Windows.Forms.TextBox txt_evalid;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        public System.Windows.Forms.TextBox txt_grpid;
     }
 }

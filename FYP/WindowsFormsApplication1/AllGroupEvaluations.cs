@@ -33,28 +33,22 @@ namespace WindowsFormsApplication1
             {
                 if (e.ColumnIndex == 0)
                 {
-                    EditStudent edit = new EditStudent();
-                    edit.txt_id.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    EditGroupEvaluation edit = new EditGroupEvaluation();
+                    edit.txt_grpid.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
-                    edit.txtfname.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    edit.txt_lname.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    edit.txt_contact.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    edit.txt_email.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    edit.txt_evalid.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    edit.txt_obtainmark.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    edit.dtp_evaluation_date.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                   // edit.txt_email.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString();
 
                     edit.ShowDialog();
                 }
                 else if (e.ColumnIndex == 1)
                 {
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    string t = "DELETE FROM GroupEvaluation where EvaluationId = '" + row.Cells[2].Value + "';";
+                    string t = "DELETE FROM GroupEvaluation where GroupId = '" + row.Cells[2].Value + "' And EvaluationId = '"+ row.Cells[3].Value +"';";
 
-                    //string q = "DELETE FROM Student where Id = '" + row.Cells[2].Value + "';";
-                    //string p = "DELETE FROM Person where Id = '" + row.Cells[2].Value + "';";
-                    //// string t = "DELETE FROM  where Id = '" + row.Cells[2].Value + "';";
-                    //SqlCommand cmt = new SqlCommand(t, con);
-                    //cmt.ExecuteNonQuery();
-                    //SqlCommand cm = new SqlCommand(q, con);
-                    //cm.ExecuteNonQuery();
+                   
                     SqlCommand cmd = new SqlCommand(t, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Congrats! Record Recorded");
@@ -74,7 +68,7 @@ namespace WindowsFormsApplication1
 
 
                 }
-                AllStudentInfo std = new AllStudentInfo();
+                AllGroupEvaluations std = new AllGroupEvaluations();
                 this.Hide();
                 std.Show();
             }
@@ -93,6 +87,23 @@ namespace WindowsFormsApplication1
                 dataGridView1.DataSource = datatab;
 
             }
+
+        }
+
+        private void btn_add_adv_Click(object sender, EventArgs e)
+        {
+            GroupEvaluation std = new GroupEvaluation();
+            this.Hide();
+            std.Show();
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

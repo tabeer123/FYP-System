@@ -113,6 +113,7 @@
             // com_adv_role
             // 
             this.com_adv_role.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.com_adv_role.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.com_adv_role.FormattingEnabled = true;
             this.com_adv_role.Items.AddRange(new object[] {
             "Main Advisor",
@@ -120,7 +121,7 @@
             "Industry Advisor"});
             this.com_adv_role.Location = new System.Drawing.Point(463, 213);
             this.com_adv_role.Name = "com_adv_role";
-            this.com_adv_role.Size = new System.Drawing.Size(169, 21);
+            this.com_adv_role.Size = new System.Drawing.Size(169, 33);
             this.com_adv_role.TabIndex = 27;
             // 
             // dtp_assign_date
@@ -182,6 +183,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28816F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(819, 371);
             this.tableLayoutPanel1.TabIndex = 38;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // button1
             // 

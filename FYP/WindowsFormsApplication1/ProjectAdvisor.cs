@@ -40,9 +40,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Data Inserted Successfully");
 
             }
-            Student std = new Student();
-            this.Hide();
-            std.Show();
+            
 
             }
         public void Projectid()
@@ -117,6 +115,11 @@ namespace WindowsFormsApplication1
            Home std = new Home();
             this.Hide();
             std.Show();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

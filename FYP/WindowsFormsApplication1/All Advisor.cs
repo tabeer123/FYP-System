@@ -75,5 +75,10 @@ namespace WindowsFormsApplication1
             std.Show();
 
         }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

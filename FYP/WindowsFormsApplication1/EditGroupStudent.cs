@@ -43,14 +43,15 @@ namespace WindowsFormsApplication1
                 {
 
 
-                    int key = Convert.ToInt32(txt_evalid.Text);
+                    int key = Convert.ToInt32(txt_grpid.Text);
+                    int key1 = Convert.ToInt32(txt_evalid.Text);
                     SqlConnection con = new SqlConnection(conStr);
                     con.Open();
                     if (con.State == ConnectionState.Open)
                     {
-                        string p = "UPDATE GroupEvaluation SET Designation= (SELECT Id FROM Lookup WHERE Lookup.Value = '" + (com_gro_id.Text) + "'), Salary =('" + Convert.ToDecimal(txt_evalid.Text) + "')WHERE Id ='" + Convert.ToInt32(txt_obtainmark.Text) + "';";
+                        string p = "UPDATE [ProjectA].[dbo].[GroupEvaluation] SET ObtainedMarks =('" + Convert.ToInt32(txt_obtainmark.Text) + "'),EvaluationDate =('" + Convert.ToDateTime(dtp_evaluation_date.Value) + "')WHERE GroupId ='" + Convert.ToInt32(txt_grpid.Text) + "' And EvaluationId= ('" + Convert.ToInt32(txt_evalid.Text) + "') ;";
+                        /*EvaluationId= ('" + (txt_evalid.Text) + "'),*/
 
-                       // "INSERT INTO GroupEvaluation(GroupId,EvaluationId,ObtainedMarks,EvaluationDate)VALUES((select Id from [Group] where [Group].Id = '" + com_gro_id.Text + "'),(select MAX(Id) from Evaluation),('" + Convert.ToInt32(txt_evalid.Text) + "'),('" + Convert.ToDateTime(dtp_evaluation_date.Text) + "'));"
                         SqlCommand cmd = new SqlCommand(p, con);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Congrats! Data Update Successfully");
@@ -74,12 +75,12 @@ namespace WindowsFormsApplication1
         private int val()
         {
             int t = 0;
-            if (string.IsNullOrEmpty(com_gro_id.Text))
+            if (string.IsNullOrEmpty(txt_grpid.Text))
             {
 
 
-                errorProvider1.SetError(com_gro_id, MessageBox.Show("Please Select Group Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
-                com_gro_id.Focus();
+                errorProvider1.SetError(txt_grpid, MessageBox.Show("Please Select Group Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+               txt_grpid.Focus();
                 t = 1;
 
 

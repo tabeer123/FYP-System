@@ -70,6 +70,12 @@
     <Compile Include="AllGroupEvaluations.Designer.cs">
       <DependentUpon>AllGroupEvaluations.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllProjectGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllProjectGroups.Designer.cs">
+      <DependentUpon>AllProjectGroups.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllStudentInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,12 @@
     <Compile Include="EditProject.Designer.cs">
       <DependentUpon>EditProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditProjectGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProjectGroup.Designer.cs">
+      <DependentUpon>EditProjectGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +165,12 @@
     </Compile>
     <Compile Include="GroupEvaluation.Designer.cs">
       <DependentUpon>GroupEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupProject.Designer.cs">
+      <DependentUpon>GroupProject.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupStudent.cs">
       <SubType>Form</SubType>
@@ -198,6 +216,9 @@
     <EmbeddedResource Include="AllGroupEvaluations.resx">
       <DependentUpon>AllGroupEvaluations.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllProjectGroups.resx">
+      <DependentUpon>AllProjectGroups.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllStudentInfo.resx">
       <DependentUpon>AllStudentInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +246,9 @@
     <EmbeddedResource Include="EditProject.resx">
       <DependentUpon>EditProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditProjectGroup.resx">
+      <DependentUpon>EditProjectGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditStudent.resx">
       <DependentUpon>EditStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GroupEvaluation.resx">
       <DependentUpon>GroupEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupProject.resx">
+      <DependentUpon>GroupProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupStudent.resx">
       <DependentUpon>GroupStudent.cs</DependentUpon>
