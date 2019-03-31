@@ -8,36 +8,62 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
 namespace WindowsFormsApplication1
 {
-    public partial class GroupEvaluation : Form
+    public partial class GroupProject : Form
     {
         public string conStr = "Data Source=DESKTOP-DV4QKKA;Initial Catalog=ProjectA;Integrated Security=True";
 
-        public GroupEvaluation()
+        public GroupProject()
         {
             InitializeComponent();
-            evaluationid();
+            projectid();
             groupid();
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupProject_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void btn_evaluate_Click(object sender, EventArgs e)
         {
-
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (con.State == ConnectionState.Open)
+            try
             {
-                String q = "INSERT INTO GroupEvaluation(GroupId,EvaluationId,ObtainedMarks,EvaluationDate)VALUES((select Id from [Group] where [Group].Id = '" + com_gro_id.Text + "'),('"+ Convert.ToInt32(com_evalid.Text)+"'),('" + Convert.ToInt32(txt_obtainmark.Text) + "'),('" + Convert.ToDateTime(dtp_evaluation_date.Value) + "'));";
-                SqlCommand cmd = new SqlCommand(q, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Data Inserted Successfully");
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (con.State == ConnectionState.Open)
+                {
+                    String q = "INSERT INTO [ProjectA].[dbo].[GroupProject](ProjectId,GroupId,AssignmentDate)VALUES(('" + Convert.ToInt32(com_prolid.Text) + "'),(select Id from [Group] where [Group].Id = '" + com_gro_id.Text + "'),('" + Convert.ToDateTime(dtp_assign_date.Value) + "'));";
+                    SqlCommand cmd = new SqlCommand(q, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data Inserted Successfully");
 
+                }
+                AllProjectGroups std = new AllProjectGroups();
+                this.Hide();
+                std.Show();
             }
-           AllGroupEvaluations  std = new AllGroupEvaluations();
-            this.Hide();
-            std.Show();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
         public void groupid()
         {
@@ -72,14 +98,14 @@ namespace WindowsFormsApplication1
 
 
         }
-        public void evaluationid()
+        public void projectid()
         {
-            com_evalid.Items.Clear();
+            com_prolid.Items.Clear();
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
             if (con.State == ConnectionState.Open)
             {
-                string q = "Select Id FROM Evaluation";
+                string q = "Select Id FROM Project";
                 SqlCommand cmd = new SqlCommand(q, con);
 
                 try
@@ -89,7 +115,7 @@ namespace WindowsFormsApplication1
                     while (myread.Read())
                     {
                         string id = myread["Id"].ToString();
-                        com_evalid.Items.Add(id);
+                        com_prolid.Items.Add(id);
 
                     }
                 }
@@ -106,16 +132,6 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void GroupEvaluation_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -126,7 +142,6 @@ namespace WindowsFormsApplication1
             Home std = new Home();
             this.Hide();
             std.Show();
-
         }
     }
 }

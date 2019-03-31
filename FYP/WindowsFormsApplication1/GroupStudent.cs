@@ -69,10 +69,14 @@ namespace WindowsFormsApplication1
                 {
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                     string t = "DELETE FROM GroupStudent where GroupId = '" + row.Cells[2].Value + "';";
-                    
+                    string h = "DELETE FROM [ProjectA].[dbo].[Group] where Id = '" + row.Cells[2].Value + "';";
+
+
                     SqlCommand cmt = new SqlCommand(t, con);
                     cmt.ExecuteNonQuery();
-                
+                    SqlCommand cmtt = new SqlCommand(h, con);
+                    cmtt.ExecuteNonQuery();
+
                     MessageBox.Show("Congrats! Record Recorded");
                     SqlDataAdapter sql = new SqlDataAdapter("SELECT * from GroupStudent;", con);
                     DataTable datatab = new DataTable();

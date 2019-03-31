@@ -22,54 +22,69 @@ namespace WindowsFormsApplication1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (e.RowIndex > -1)
+            try
             {
-                if (e.ColumnIndex == 0)
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (e.RowIndex > -1)
                 {
-                    EditProject edit = new EditProject();
-                    edit.txt_pro_id.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    edit.txt_descrip.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    edit.txt_pro_title.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    if (e.ColumnIndex == 0)
+                    {
+                        EditProject edit = new EditProject();
+                        edit.txt_pro_id.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                        edit.txt_descrip.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                        edit.txt_pro_title.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
 
-                    edit.ShowDialog();
+                        edit.ShowDialog();
+                    }
+                    else if (e.ColumnIndex == 1)
+                    {
+                        DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                        string q = "DELETE FROM Project where Id = '" + row.Cells[2].Value + "';";
+
+                        SqlCommand cm = new SqlCommand(q, con);
+                        cm.ExecuteNonQuery();
+
+                        MessageBox.Show("Congrats! Record Recorded");
+                        SqlDataAdapter sql = new SqlDataAdapter("SELECT Id, Description, Title from Project;", con);
+                        DataTable datatab = new DataTable();
+                        sql.Fill(datatab);
+                        dataGridView1.DataSource = datatab;
+                        con.Close();
+
+                    }
+                    AllProject std = new AllProject();
+                    this.Hide();
+                    std.Show();
                 }
-                else if (e.ColumnIndex == 1)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    string q = "DELETE FROM Project where Id = '" + row.Cells[2].Value + "';";
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show(EX.Message);
 
-                    SqlCommand cm = new SqlCommand(q, con);
-                    cm.ExecuteNonQuery();
-
-                    MessageBox.Show("Congrats! Record Recorded");
-                    SqlDataAdapter sql = new SqlDataAdapter("SELECT Id, Description, Title from Project;", con);
-                    DataTable datatab = new DataTable();
-                    sql.Fill(datatab);
-                    dataGridView1.DataSource = datatab;
-                    con.Close();
-
-                }
-                AllProject std = new AllProject();
-                this.Hide();
-                std.Show();
             }
         }
 
         private void AllProject_Load(object sender, EventArgs e)
         {
-
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (con.State == ConnectionState.Open)
+            try
             {
 
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT * from Project;", con);
-                DataTable datatab = new DataTable();
-                sda.Fill(datatab);
-                dataGridView1.DataSource = datatab;
-               
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (con.State == ConnectionState.Open)
+                {
+
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT * from Project;", con);
+                    DataTable datatab = new DataTable();
+                    sda.Fill(datatab);
+                    dataGridView1.DataSource = datatab;
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             
         }

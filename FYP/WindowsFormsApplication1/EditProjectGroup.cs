@@ -7,40 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
-    public partial class EditProject : Form
+    public partial class EditProjectGroup : Form
     {
         public string conStr = "Data Source=DESKTOP-DV4QKKA;Initial Catalog=ProjectA;Integrated Security=True";
 
-        public EditProject()
+        public EditProjectGroup()
         {
             InitializeComponent();
         }
-        AllProject aadv = null;
+        AllProjectGroups aadv = null;
         long advnum = 0;
-        public EditProject(AllProject all, long id)
+        public EditProjectGroup(AllProjectGroups all, long id)
         {
             InitializeComponent();
             this.aadv = all;
             this.advnum = id;
-
         }
 
-        private void btn_add_pro_Click(object sender, EventArgs e)
+        private void btn_evaluate_Click(object sender, EventArgs e)
         {
             if (val() == 0)
             {
+
+
                 try
                 {
-                    int key = Convert.ToInt32(txt_pro_id.Text);
+                    int key = Convert.ToInt32(txt_grpid.Text);
+                    int key1 = Convert.ToInt32(txt_evalid.Text);
                     SqlConnection con = new SqlConnection(conStr);
                     con.Open();
                     if (con.State == ConnectionState.Open)
                     {
-                        string p = "UPDATE Project SET Description=('" + txt_descrip.Text.ToString() + "'),Title =('" + txt_pro_title.Text.ToString() + "')WHERE Id = '" + Convert.ToInt32(txt_pro_id.Text) + "';";
+                        string p = "UPDATE [ProjectA].[dbo].[GroupProject] SET AssignmentDate=('" + Convert.ToDateTime(dtp_evaluation_date.Value) + "')WHERE ProjectId = '" + (txt_evalid.Text) + "' And GroupId = '" + (txt_grpid.Text) + "'  ;";
 
 
                         SqlCommand cmd = new SqlCommand(p, con);
@@ -60,41 +63,35 @@ namespace WindowsFormsApplication1
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
-        }
-
-        private void EditProject_Load(object sender, EventArgs e)
-        {
-
         }
         private int val()
         {
             int t = 0;
-            if (string.IsNullOrEmpty(txt_pro_title.Text))
+            if (string.IsNullOrEmpty(txt_grpid.Text))
             {
 
 
-                errorProvider1.SetError(txt_pro_title, MessageBox.Show("Please Enter Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
-                txt_pro_title.Focus();
+                errorProvider1.SetError(txt_grpid, MessageBox.Show("Please Enter Group ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_grpid.Focus();
                 t = 1;
 
 
             }
-            else if (string.IsNullOrEmpty(txt_descrip.Text))
+            else if (string.IsNullOrEmpty(txt_evalid.Text))
             {
 
-                errorProvider1.SetError(txt_descrip, MessageBox.Show("Please Select  Total Marks", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
-                txt_descrip.Focus();
+                errorProvider1.SetError(txt_evalid, MessageBox.Show("Please Enter Evaluation ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                txt_evalid.Focus();
                 t = 1;
 
 
             }
-            else if (string.IsNullOrEmpty(txt_pro_id.Text))
+            else if (string.IsNullOrEmpty(dtp_evaluation_date.Text))
             {
 
-                errorProvider1.SetError(txt_pro_id, MessageBox.Show("Please Enter Total Weightage", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
-                txt_pro_id.Focus();
+                errorProvider1.SetError(dtp_evaluation_date, MessageBox.Show("Please Enter Date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                dtp_evaluation_date.Focus();
                 t = 1;
 
 

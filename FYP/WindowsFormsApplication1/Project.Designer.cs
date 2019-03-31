@@ -32,8 +32,6 @@
             this.lbl_pro_descrip = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
             this.txt_pro_title = new System.Windows.Forms.TextBox();
-            this.lbl_pro_id = new System.Windows.Forms.Label();
-            this.txt_pro_id = new System.Windows.Forms.TextBox();
             this.btn_add_pro = new System.Windows.Forms.Button();
             this.txt_descrip = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,25 +70,6 @@
             this.txt_pro_title.Name = "txt_pro_title";
             this.txt_pro_title.Size = new System.Drawing.Size(210, 31);
             this.txt_pro_title.TabIndex = 22;
-            // 
-            // lbl_pro_id
-            // 
-            this.lbl_pro_id.AutoSize = true;
-            this.lbl_pro_id.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pro_id.Location = new System.Drawing.Point(237, 112);
-            this.lbl_pro_id.Name = "lbl_pro_id";
-            this.lbl_pro_id.Size = new System.Drawing.Size(102, 24);
-            this.lbl_pro_id.TabIndex = 21;
-            this.lbl_pro_id.Text = "Project ID";
-            // 
-            // txt_pro_id
-            // 
-            this.txt_pro_id.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_pro_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pro_id.Location = new System.Drawing.Point(442, 115);
-            this.txt_pro_id.Name = "txt_pro_id";
-            this.txt_pro_id.Size = new System.Drawing.Size(210, 31);
-            this.txt_pro_id.TabIndex = 20;
             // 
             // btn_add_pro
             // 
@@ -138,9 +117,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txt_pro_title, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.txt_descrip, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.lbl_title, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txt_pro_id, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.lbl_pro_descrip, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_pro_id, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btn_add_pro, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(-59, 5);
@@ -187,8 +164,6 @@
         private System.Windows.Forms.Label lbl_pro_descrip;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.TextBox txt_pro_title;
-        private System.Windows.Forms.Label lbl_pro_id;
-        private System.Windows.Forms.TextBox txt_pro_id;
         private System.Windows.Forms.Button btn_add_pro;
         private System.Windows.Forms.TextBox txt_descrip;
         private System.Windows.Forms.Label label2;

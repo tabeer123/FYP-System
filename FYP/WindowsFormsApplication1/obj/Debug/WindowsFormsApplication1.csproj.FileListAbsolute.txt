@@ -45,3 +45,7 @@ C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\
 C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.GroupProject.resources
 C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AllProjectGroups.resources
 C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.EditProjectGroup.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ReportStudentAndProject.resources
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\RdlCompile.cache
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\obj\Debug\RdlCompile.compiled
+C:\Users\Ahmed Sohail\Desktop\FYP-System\FYP\WindowsFormsApplication1\bin\Debug\Microsoft.ReportViewer.WinForms.dll

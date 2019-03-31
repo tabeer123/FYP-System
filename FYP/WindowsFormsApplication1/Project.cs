@@ -71,15 +71,15 @@ namespace WindowsFormsApplication1
 
 
             }
-            else if (string.IsNullOrEmpty(txt_pro_id.Text))
-            {
+            //else if (string.IsNullOrEmpty(txt_pro_id.Text))
+            //{
 
-                errorProvider1.SetError(txt_pro_id, MessageBox.Show("Please Enter Total Weightage", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
-                txt_pro_id.Focus();
-                t = 1;
+            //    errorProvider1.SetError(txt_pro_id, MessageBox.Show("Please Enter Total Weightage", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+            //    txt_pro_id.Focus();
+            //    t = 1;
 
 
-            }
+            //}
             return t;
         }
 

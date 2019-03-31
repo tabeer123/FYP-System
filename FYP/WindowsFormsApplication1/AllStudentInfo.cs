@@ -26,72 +26,82 @@ namespace WindowsFormsApplication1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (e.RowIndex > -1)
+            try {
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (e.RowIndex > -1)
+                {
+                    if (e.ColumnIndex == 0)
+                    {
+                        EditStudent edit = new EditStudent();
+                        edit.txt_id.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+
+                        edit.txtfname.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                        edit.txt_lname.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                        edit.txt_contact.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                        edit.txt_email.Text = this.dataGridView1.CurrentRow.Cells[7].Value.ToString();
+
+                        edit.ShowDialog();
+                    }
+                    else if (e.ColumnIndex == 1)
+                    {
+                        DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                        string t = "DELETE FROM GroupStudent where StudentId = '" + row.Cells[2].Value + "';";
+
+                        string q = "DELETE FROM Student where Id = '" + row.Cells[2].Value + "';";
+                        string p = "DELETE FROM Person where Id = '" + row.Cells[2].Value + "';";
+                        // string t = "DELETE FROM  where Id = '" + row.Cells[2].Value + "';";
+                        SqlCommand cmt = new SqlCommand(t, con);
+                        cmt.ExecuteNonQuery();
+                        SqlCommand cm = new SqlCommand(q, con);
+                        cm.ExecuteNonQuery();
+                        SqlCommand cmd = new SqlCommand(p, con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Congrats! Record Recorded");
+                        SqlDataAdapter sql = new SqlDataAdapter("SELECT Person.Id, Student.RegistrationNo, Person.FirstName, Person.LastName, Person.Contact,Person.Email, Person.DateOfBirth, Person.Gender from  Student JOIN Person ON Student.Id = Person.Id;", con);
+                        DataTable datatab = new DataTable();
+                        sql.Fill(datatab);
+                        dataGridView1.DataSource = datatab;
+                        con.Close();
+
+
+
+
+
+
+
+
+
+
+                    }
+                    AllStudentInfo std = new AllStudentInfo();
+                    this.Hide();
+                    std.Show();
+                }
+
+            }catch(Exception ex)
             {
-                if (e.ColumnIndex == 0)
-                {
-                    EditStudent edit = new EditStudent();
-                    edit.txt_id.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-
-                    edit.txtfname.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    edit.txt_lname.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    edit.txt_contact.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    edit.txt_email.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString();
-
-                    edit.ShowDialog();
-                }
-                else if (e.ColumnIndex == 1)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    string t = "DELETE FROM GroupStudent where StudentId = '" + row.Cells[2].Value + "';";
-
-                    string q = "DELETE FROM Student where Id = '" + row.Cells[2].Value + "';";
-                    string p = "DELETE FROM Person where Id = '" + row.Cells[2].Value + "';";
-                    // string t = "DELETE FROM  where Id = '" + row.Cells[2].Value + "';";
-                    SqlCommand cmt = new SqlCommand(t, con);
-                    cmt.ExecuteNonQuery();
-                    SqlCommand cm = new SqlCommand(q, con);
-                    cm.ExecuteNonQuery();
-                    SqlCommand cmd = new SqlCommand(p, con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Congrats! Record Recorded");
-                    SqlDataAdapter sql = new SqlDataAdapter("SELECT Person.Id, Student.RegistrationNo, Person.FirstName, Person.LastName, Person.Contact,Person.Email, Person.DateOfBirth, Person.Gender from  Student JOIN Person ON Student.Id = Person.Id;", con  );
-                    DataTable datatab = new DataTable();
-                    sql.Fill(datatab);
-                    dataGridView1.DataSource = datatab;
-                    con.Close();
-
-
-
-
-
-
-
-
-
-
-                }
-                AllStudentInfo std = new AllStudentInfo();
-                this.Hide();
-                std.Show();
+                MessageBox.Show(ex.Message);
             }
-
-        }
-
+}
         private void AllStudentInfo_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (con.State == ConnectionState.Open)
+            try
             {
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (con.State == ConnectionState.Open)
+                {
 
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT Person.Id, Student.RegistrationNo, Person.FirstName, Person.LastName, Person.Contact,Person.Email, Person.DateOfBirth, Person.Gender from  Student JOIN Person ON Student.Id = Person.Id;", con);
-                DataTable datatab = new DataTable();
-                sda.Fill(datatab);
-                dataGridView1.DataSource = datatab;
-               
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT Person.Id, Student.RegistrationNo, Person.FirstName, Person.LastName, Person.Contact,Person.Email, Person.DateOfBirth, Person.Gender from  Student JOIN Person ON Student.Id = Person.Id;", con);
+                    DataTable datatab = new DataTable();
+                    sda.Fill(datatab);
+                    dataGridView1.DataSource = datatab;
+
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
            
         }

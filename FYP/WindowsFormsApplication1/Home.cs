@@ -40,10 +40,37 @@ namespace WindowsFormsApplication1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            AllEvaluations std = new AllEvaluations();
+            
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            GroupEvaluation std = new GroupEvaluation();
             this.Hide();
             std.Show();
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AllGroupEvaluations std = new AllGroupEvaluations();
+            this.Hide();
+            std.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ProjectAdvisor std = new ProjectAdvisor();
+            this.Hide();
+            std.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            GroupProject std = new GroupProject();
+            this.Hide();
+            std.Show();
         }
     }
 }
