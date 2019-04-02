@@ -74,7 +74,7 @@
             // btn_add_pro
             // 
             this.btn_add_pro.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_pro.Location = new System.Drawing.Point(658, 339);
+            this.btn_add_pro.Location = new System.Drawing.Point(442, 339);
             this.btn_add_pro.Name = "btn_add_pro";
             this.btn_add_pro.Size = new System.Drawing.Size(147, 32);
             this.btn_add_pro.TabIndex = 19;
@@ -118,8 +118,8 @@
             this.tableLayoutPanel1.Controls.Add(this.txt_descrip, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.lbl_title, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.lbl_pro_descrip, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btn_add_pro, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.btn_add_pro, 2, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(-59, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -138,7 +138,7 @@
             this.button1.Font = new System.Drawing.Font("Garamond", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(237, 339);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 32);
+            this.button1.Size = new System.Drawing.Size(118, 32);
             this.button1.TabIndex = 18;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;

@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -207,6 +211,12 @@
     <Compile Include="ReportStudentAndProject.Designer.cs">
       <DependentUpon>ReportStudentAndProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="MarkSheetReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarkSheetReport.Designer.cs">
+      <DependentUpon>MarkSheetReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +292,9 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MarkSheetReport.resx">
+      <DependentUpon>MarkSheetReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Project.resx">
       <DependentUpon>Project.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,13 +310,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReportofStudentAndProject.rdlc" />
     <EmbeddedResource Include="ReportStudentAndProject.resx">
       <DependentUpon>ReportStudentAndProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student.resx">
       <DependentUpon>Student.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

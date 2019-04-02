@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using System.Data.SqlClient;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -14,38 +15,23 @@ using System.IO;
 
 namespace WindowsFormsApplication1
 {
-    public partial class ReportStudentAndProject : Form
+    public partial class MarkSheetReport : Form
     {
         public string conStr = "Data Source=DESKTOP-DV4QKKA;Initial Catalog=ProjectA;Integrated Security=True";
 
-        public ReportStudentAndProject()
+        public MarkSheetReport()
         {
             InitializeComponent();
         }
 
-        private void ReportStudentAndProject_Load(object sender, EventArgs e)
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
-            try
-            {
-                SqlConnection con = new SqlConnection(conStr);
-                con.Open();
-                if (con.State == ConnectionState.Open)
-                {
 
-                    SqlDataAdapter sda = new SqlDataAdapter("SELECT  Project.Title AS ProjectTitle,Project.Description AS ProjectDescription, C.Value AS AdvisorDesignation, B.Value AS AdvisorRole, ProjectAdvisor.AssignmentDate, G.Value AS[Status], s.RegistrationNo, CONCAT(P.FirstName,' ', P.LastName) as [Name] FROM Project JOIN ProjectAdvisor  ON Project.Id = ProjectAdvisor.ProjectId JOIN Advisor as ad ON ad.Id = ProjectAdvisor.AdvisorId JOIN GroupProject as gp ON gp.ProjectId = Project.Id JOIN GroupStudent as gs ON gs.GroupId = gp.GroupId JOIN Student as s ON s.Id = gs.StudentId JOIN Person as p ON p.Id = s.Id LEFT JOIN Lookup AS B ON(B.Id = ProjectAdvisor.AdvisorRole) LEFT JOIN Lookup AS C ON(C.Id = ad.Designation) LEFT JOIN Lookup AS G ON(G.Id = gs.[Status]); ", con);
-                    DataTable datatab = new DataTable();
-                    sda.Fill(datatab);
-                    dataGridView1.DataSource = datatab;
+        }
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        private void MarkSheetReport_Load(object sender, EventArgs e)
+        {
 
-
-            //this.reportViewer1.RefreshReport();
         }
         public void exportgridtopdf(DataGridView d, string fname)
         {
@@ -98,33 +84,24 @@ namespace WindowsFormsApplication1
                 MessageBox.Show(ex.Message);
             }
         }
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+     
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void btn_editstd_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            exportgridtopdf(dataGridView1, "MarksReport");
+        }
+
+        private void btn_editstd_Click_1(object sender, EventArgs e)
         {
             Home std = new Home();
             this.Hide();
             std.Show();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-            exportgridtopdf(dataGridView1, "test");
 
         }
     }

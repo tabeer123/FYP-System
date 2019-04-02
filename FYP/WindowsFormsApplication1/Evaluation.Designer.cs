@@ -133,7 +133,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txt_totwet, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.txt_mark, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 1, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(-45, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -145,6 +145,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.77609F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(749, 455);
             this.tableLayoutPanel1.TabIndex = 41;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label1
             // 
@@ -159,9 +160,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Garamond", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 379);
+            this.button2.Location = new System.Drawing.Point(187, 379);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 32);
+            this.button2.Size = new System.Drawing.Size(118, 32);
             this.button2.TabIndex = 18;
             this.button2.Text = "Home";
             this.button2.UseVisualStyleBackColor = true;

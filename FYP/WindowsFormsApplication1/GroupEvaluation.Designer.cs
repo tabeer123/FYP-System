@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_evaluate = new System.Windows.Forms.Button();
             this.txt_obtainmark = new System.Windows.Forms.TextBox();
             this.lbl_obtmark = new System.Windows.Forms.Label();
@@ -41,14 +42,16 @@
             this.lbl_evalid = new System.Windows.Forms.Label();
             this.com_evalid = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_evaluate
             // 
             this.btn_evaluate.Font = new System.Drawing.Font("Garamond", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_evaluate.Location = new System.Drawing.Point(664, 291);
+            this.btn_evaluate.Location = new System.Drawing.Point(623, 291);
             this.btn_evaluate.Name = "btn_evaluate";
             this.btn_evaluate.Size = new System.Drawing.Size(95, 32);
             this.btn_evaluate.TabIndex = 15;
@@ -60,16 +63,16 @@
             // 
             this.txt_obtainmark.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_obtainmark.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_obtainmark.Location = new System.Drawing.Point(446, 99);
+            this.txt_obtainmark.Location = new System.Drawing.Point(402, 99);
             this.txt_obtainmark.Name = "txt_obtainmark";
-            this.txt_obtainmark.Size = new System.Drawing.Size(212, 31);
+            this.txt_obtainmark.Size = new System.Drawing.Size(215, 31);
             this.txt_obtainmark.TabIndex = 12;
             // 
             // lbl_obtmark
             // 
             this.lbl_obtmark.AutoSize = true;
             this.lbl_obtmark.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_obtmark.Location = new System.Drawing.Point(198, 96);
+            this.lbl_obtmark.Location = new System.Drawing.Point(165, 96);
             this.lbl_obtmark.Name = "lbl_obtmark";
             this.lbl_obtmark.Size = new System.Drawing.Size(157, 24);
             this.lbl_obtmark.TabIndex = 11;
@@ -79,7 +82,7 @@
             // 
             this.lbl_groid.AutoSize = true;
             this.lbl_groid.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_groid.Location = new System.Drawing.Point(198, 0);
+            this.lbl_groid.Location = new System.Drawing.Point(165, 0);
             this.lbl_groid.Name = "lbl_groid";
             this.lbl_groid.Size = new System.Drawing.Size(96, 24);
             this.lbl_groid.TabIndex = 9;
@@ -89,7 +92,7 @@
             // 
             this.lbl_evaldate.AutoSize = true;
             this.lbl_evaldate.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_evaldate.Location = new System.Drawing.Point(198, 144);
+            this.lbl_evaldate.Location = new System.Drawing.Point(165, 144);
             this.lbl_evaldate.Name = "lbl_evaldate";
             this.lbl_evaldate.Size = new System.Drawing.Size(156, 24);
             this.lbl_evaldate.TabIndex = 16;
@@ -99,9 +102,9 @@
             // 
             this.dtp_evaluation_date.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtp_evaluation_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_evaluation_date.Location = new System.Drawing.Point(446, 147);
+            this.dtp_evaluation_date.Location = new System.Drawing.Point(402, 147);
             this.dtp_evaluation_date.Name = "dtp_evaluation_date";
-            this.dtp_evaluation_date.Size = new System.Drawing.Size(212, 31);
+            this.dtp_evaluation_date.Size = new System.Drawing.Size(215, 31);
             this.dtp_evaluation_date.TabIndex = 30;
             // 
             // com_gro_id
@@ -109,9 +112,9 @@
             this.com_gro_id.Dock = System.Windows.Forms.DockStyle.Fill;
             this.com_gro_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.com_gro_id.FormattingEnabled = true;
-            this.com_gro_id.Location = new System.Drawing.Point(446, 3);
+            this.com_gro_id.Location = new System.Drawing.Point(402, 3);
             this.com_gro_id.Name = "com_gro_id";
-            this.com_gro_id.Size = new System.Drawing.Size(212, 33);
+            this.com_gro_id.Size = new System.Drawing.Size(215, 33);
             this.com_gro_id.TabIndex = 32;
             // 
             // label2
@@ -128,11 +131,10 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.9177F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.31045F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.63646F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.13539F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 6);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.78022F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.93773F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.98413F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.05372F));
             this.tableLayoutPanel1.Controls.Add(this.lbl_evaldate, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.dtp_evaluation_date, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.btn_evaluate, 3, 6);
@@ -142,6 +144,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lbl_obtmark, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lbl_evalid, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.com_evalid, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 116);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -159,7 +162,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Garamond", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 291);
+            this.button1.Location = new System.Drawing.Point(165, 291);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 32);
             this.button1.TabIndex = 18;
@@ -171,7 +174,7 @@
             // 
             this.lbl_evalid.AutoSize = true;
             this.lbl_evalid.Font = new System.Drawing.Font("Garamond", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_evalid.Location = new System.Drawing.Point(198, 48);
+            this.lbl_evalid.Location = new System.Drawing.Point(165, 48);
             this.lbl_evalid.Name = "lbl_evalid";
             this.lbl_evalid.Size = new System.Drawing.Size(137, 24);
             this.lbl_evalid.TabIndex = 10;
@@ -182,9 +185,9 @@
             this.com_evalid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.com_evalid.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.com_evalid.FormattingEnabled = true;
-            this.com_evalid.Location = new System.Drawing.Point(446, 51);
+            this.com_evalid.Location = new System.Drawing.Point(402, 51);
             this.com_evalid.Name = "com_evalid";
-            this.com_evalid.Size = new System.Drawing.Size(212, 33);
+            this.com_evalid.Size = new System.Drawing.Size(215, 33);
             this.com_evalid.TabIndex = 33;
             // 
             // tableLayoutPanel2
@@ -203,6 +206,10 @@
             this.tableLayoutPanel2.TabIndex = 39;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // GroupEvaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +224,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,5 +244,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lbl_evalid;
         private System.Windows.Forms.ComboBox com_evalid;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

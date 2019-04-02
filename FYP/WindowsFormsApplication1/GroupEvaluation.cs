@@ -24,20 +24,27 @@ namespace WindowsFormsApplication1
 
         private void btn_evaluate_Click(object sender, EventArgs e)
         {
-
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (con.State == ConnectionState.Open)
+            try
             {
-                String q = "INSERT INTO GroupEvaluation(GroupId,EvaluationId,ObtainedMarks,EvaluationDate)VALUES((select Id from [Group] where [Group].Id = '" + com_gro_id.Text + "'),('"+ Convert.ToInt32(com_evalid.Text)+"'),('" + Convert.ToInt32(txt_obtainmark.Text) + "'),('" + Convert.ToDateTime(dtp_evaluation_date.Value) + "'));";
-                SqlCommand cmd = new SqlCommand(q, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Data Inserted Successfully");
 
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (con.State == ConnectionState.Open)
+                {
+                    String q = "INSERT INTO GroupEvaluation(GroupId,EvaluationId,ObtainedMarks,EvaluationDate)VALUES((select Id from [Group] where [Group].Id = '" + com_gro_id.Text + "'),('" + Convert.ToInt32(com_evalid.Text) + "'),('" + Convert.ToInt32(txt_obtainmark.Text) + "'),('" + Convert.ToDateTime(dtp_evaluation_date.Value) + "'));";
+                    SqlCommand cmd = new SqlCommand(q, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data Inserted Successfully");
+
+                }
+                AllGroupEvaluations std = new AllGroupEvaluations();
+                this.Hide();
+                std.Show();
             }
-           AllGroupEvaluations  std = new AllGroupEvaluations();
-            this.Hide();
-            std.Show();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public void groupid()
         {
@@ -74,36 +81,43 @@ namespace WindowsFormsApplication1
         }
         public void evaluationid()
         {
-            com_evalid.Items.Clear();
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (con.State == ConnectionState.Open)
+            try
             {
-                string q = "Select Id FROM Evaluation";
-                SqlCommand cmd = new SqlCommand(q, con);
-
-                try
+                com_evalid.Items.Clear();
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (con.State == ConnectionState.Open)
                 {
+                    string q = "Select Id FROM Evaluation";
+                    SqlCommand cmd = new SqlCommand(q, con);
 
-                    SqlDataReader myread = cmd.ExecuteReader();
-                    while (myread.Read())
+                    try
                     {
-                        string id = myread["Id"].ToString();
-                        com_evalid.Items.Add(id);
 
+                        SqlDataReader myread = cmd.ExecuteReader();
+                        while (myread.Read())
+                        {
+                            string id = myread["Id"].ToString();
+                            com_evalid.Items.Add(id);
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                //Student std = new Student();
+                //this.Hide();
+                //std.Show();
+                con.Close();
+
+
             }
-            //Student std = new Student();
-            //this.Hide();
-            //std.Show();
-            con.Close();
-
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void GroupEvaluation_Load(object sender, EventArgs e)

@@ -50,49 +50,56 @@ namespace WindowsFormsApplication1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            SqlConnection con = new SqlConnection(conStr);
-            con.Open();
-            if (e.RowIndex > -1)
+            try
             {
-                if (e.ColumnIndex == 0)
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (e.RowIndex > -1)
                 {
-                    EditGroup edit = new EditGroup();
-                    edit.txt_groupid.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    if (e.ColumnIndex == 0)
+                    {
+                        EditGroup edit = new EditGroup();
+                        edit.txt_groupid.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
-                    edit.com_sta.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    edit.dtp_assign.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                   
-                    edit.ShowDialog();
+                        edit.com_sta.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                        edit.dtp_assign.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
+                        edit.ShowDialog();
+
+                    }
+                    else if (e.ColumnIndex == 1)
+                    {
+                        DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                        string t = "DELETE FROM GroupStudent where GroupId = '" + row.Cells[2].Value + "';";
+                        string h = "DELETE FROM [ProjectA].[dbo].[Group] where Id = '" + row.Cells[2].Value + "';";
+
+
+                        SqlCommand cmt = new SqlCommand(t, con);
+                        cmt.ExecuteNonQuery();
+                        SqlCommand cmtt = new SqlCommand(h, con);
+                        cmtt.ExecuteNonQuery();
+
+                        MessageBox.Show("Congrats! Record Recorded");
+                        SqlDataAdapter sql = new SqlDataAdapter("SELECT * from GroupStudent;", con);
+                        DataTable datatab = new DataTable();
+                        sql.Fill(datatab);
+                        dataGridView1.DataSource = datatab;
+                        con.Close();
+
+
+
+
+
+
+                    }
+                    GroupStudent std = new GroupStudent();
+                    this.Hide();
+                    std.Show();
                 }
-                else if (e.ColumnIndex == 1)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    string t = "DELETE FROM GroupStudent where GroupId = '" + row.Cells[2].Value + "';";
-                    string h = "DELETE FROM [ProjectA].[dbo].[Group] where Id = '" + row.Cells[2].Value + "';";
-
-
-                    SqlCommand cmt = new SqlCommand(t, con);
-                    cmt.ExecuteNonQuery();
-                    SqlCommand cmtt = new SqlCommand(h, con);
-                    cmtt.ExecuteNonQuery();
-
-                    MessageBox.Show("Congrats! Record Recorded");
-                    SqlDataAdapter sql = new SqlDataAdapter("SELECT * from GroupStudent;", con);
-                    DataTable datatab = new DataTable();
-                    sql.Fill(datatab);
-                    dataGridView1.DataSource = datatab;
-                    con.Close();
-
-
-
-
-
-
-                }
-               GroupStudent std = new GroupStudent();
-                this.Hide();
-                std.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
