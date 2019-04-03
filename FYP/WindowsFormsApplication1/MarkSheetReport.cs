@@ -31,8 +31,30 @@ namespace WindowsFormsApplication1
 
         private void MarkSheetReport_Load(object sender, EventArgs e)
         {
+            try
+            {
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                if (con.State == ConnectionState.Open)
+                {
 
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT CONCAT(p.FirstName,' ' , p.LastName) as [Name], s.RegistrationNo, B.[Value] as [Status],  e.[Name] as Evaluation_Name,ge.ObtainedMarks, e.TotalMarks, e.TotalWeightage, pr.Title as Project_Title, pr.[Description] as Project_Description FROM Person as p JOIN Student as s ON p.Id = s.Id JOIN GroupStudent as gs ON s.Id = gs.StudentId JOIN GroupEvaluation as ge ON ge.GroupId = gs.GroupId JOIN Evaluation as  e ON ge.EvaluationId = e.Id JOIN GroupProject as gp ON gs.GroupId = gp.GroupId JOIN Project as pr ON gp.ProjectId=pr.Id LEFT JOIN Lookup AS B ON (B.Id = gs.Status  ) ", con);
+                    DataTable datatab = new DataTable();
+                    sda.Fill(datatab);
+                    dataGridView1.DataSource = datatab;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            //this.reportViewer1.RefreshReport();
         }
+
+    
         public void exportgridtopdf(DataGridView d, string fname)
         {
             try
@@ -102,6 +124,11 @@ namespace WindowsFormsApplication1
             Home std = new Home();
             this.Hide();
             std.Show();
+
+        }
+
+        private void tableLayoutPanel2_Paint_1(object sender, PaintEventArgs e)
+        {
 
         }
     }

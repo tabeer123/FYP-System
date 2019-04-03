@@ -39,10 +39,14 @@ namespace WindowsFormsApplication1
                 else if (e.ColumnIndex == 1)
                 {
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    string q = "DELETE FROM Evaluation where Id = '" + row.Cells[2].Value + "';";
+                    string q = "DELETE FROM GroupEvaluation where EvaluationId = '" + row.Cells[2].Value + "';";
+                    string t = "DELETE FROM Evaluation where Id = '" + row.Cells[2].Value + "';";
 
                     SqlCommand cm = new SqlCommand(q, con);
                     cm.ExecuteNonQuery();
+
+                    SqlCommand cmt = new SqlCommand(t, con);
+                    cmt.ExecuteNonQuery();
 
                     MessageBox.Show("Congrats! Record Deletded");
                     SqlDataAdapter sql = new SqlDataAdapter("SELECT * from Evaluation;", con);

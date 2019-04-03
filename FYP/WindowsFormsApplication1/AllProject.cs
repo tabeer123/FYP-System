@@ -40,10 +40,19 @@ namespace WindowsFormsApplication1
                     else if (e.ColumnIndex == 1)
                     {
                         DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                        string t = "DELETE FROM [ProjectA].[dbo].[GroupProject] where [ProjectId] = '" + row.Cells[2].Value + "';";
+                        string m = "DELETE FROM [ProjectA].[dbo].[ProjectAdvisor] where [ProjectId] = '" + row.Cells[2].Value + "';";
+
                         string q = "DELETE FROM Project where Id = '" + row.Cells[2].Value + "';";
+                        SqlCommand cmt = new SqlCommand(t, con);
+                        cmt.ExecuteNonQuery();
+                        SqlCommand cmtt = new SqlCommand(m, con);
+                        cmtt.ExecuteNonQuery();
 
                         SqlCommand cm = new SqlCommand(q, con);
                         cm.ExecuteNonQuery();
+
+                
 
                         MessageBox.Show("Congrats! Record Recorded");
                         SqlDataAdapter sql = new SqlDataAdapter("SELECT Id, Description, Title from Project;", con);

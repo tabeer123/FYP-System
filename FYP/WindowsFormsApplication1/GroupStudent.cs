@@ -70,14 +70,17 @@ namespace WindowsFormsApplication1
                     else if (e.ColumnIndex == 1)
                     {
                         DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                        string m = "DELETE FROM [ProjectA].[dbo].[GroupEvaluation] where GroupId = '" + row.Cells[2].Value + "';";
+
                         string t = "DELETE FROM GroupStudent where GroupId = '" + row.Cells[2].Value + "';";
                         string h = "DELETE FROM [ProjectA].[dbo].[Group] where Id = '" + row.Cells[2].Value + "';";
 
-
+                        SqlCommand cmtt = new SqlCommand(m, con);
+                        cmtt.ExecuteNonQuery();
                         SqlCommand cmt = new SqlCommand(t, con);
                         cmt.ExecuteNonQuery();
-                        SqlCommand cmtt = new SqlCommand(h, con);
-                        cmtt.ExecuteNonQuery();
+                        SqlCommand cmttt = new SqlCommand(h, con);
+                        cmttt.ExecuteNonQuery();
 
                         MessageBox.Show("Congrats! Record Recorded");
                         SqlDataAdapter sql = new SqlDataAdapter("SELECT * from GroupStudent;", con);

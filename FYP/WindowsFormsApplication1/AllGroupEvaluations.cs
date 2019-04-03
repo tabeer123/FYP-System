@@ -46,6 +46,8 @@ namespace WindowsFormsApplication1
                 else if (e.ColumnIndex == 1)
                 {
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                   // string t = "DELETE FROM GroupEvaluation where GroupId = '" + row.Cells[2].Value + "' And EvaluationId = '" + row.Cells[3].Value + "';";
+
                     string t = "DELETE FROM GroupEvaluation where GroupId = '" + row.Cells[2].Value + "' And EvaluationId = '"+ row.Cells[3].Value +"';";
 
                    
